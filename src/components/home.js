@@ -1,6 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 export default function Home() {
+  const [movieName, setMovieName] = useState("call me");
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      let response = await fetch(
+        `https://www.omdbapi.com/?s=${movieName}&page=1&apikey=6e81707`
+      );
+      let json = await response.json();
+      console.log(json.Search);
+    }
+    fetchData();
+  }, []);
+  const test = movies;
+  // console.log(json);
+
   return (
     <div className="card card-body m-4">
       <h2>Welcome.</h2>
@@ -18,6 +34,7 @@ export default function Home() {
           Search
         </button>
       </form>
+      {/* <div>{movies[0].Title}</div> */}
     </div>
   );
 }

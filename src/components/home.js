@@ -33,12 +33,6 @@ export default function Home() {
         placeholder="Search for a movie, tv show, game......"
         onChange={(e) => setMovieName(e.target.value)}
       />
-      <input
-        className="btn btn-secondary my-2 my-sm-0"
-        type="submit"
-        value="Search"
-        onClick={(e) => setMovieName(movie)}
-      />
 
       <Post movies={page ? page : []} />
     </div>

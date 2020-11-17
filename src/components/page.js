@@ -7,14 +7,14 @@ export default function Page(props) {
   useEffect(() => {
     async function fetchData() {
       let response = await fetch(
-        `https://www.omdbapi.com/?s=${props.movie}&page=1&apikey=6e81707`
+        `https://www.omdbapi.com/?s=${props.movie}&page=${props.pageNumber}&apikey=6e81707`
       );
       let json = await response.json();
       setPage(json.Search);
     }
 
     fetchData();
-  }, [props.movie]);
+  }, [props.movie, props.pageNumber]);
 
   return (
     <div>

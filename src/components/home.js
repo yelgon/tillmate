@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Page from "./page";
-import { Link } from "react-router-dom";
 
 export default function Home() {
   const [movie, setMovieName] = useState("");
+  const [pageNumber, setPageNumber] = useState(1);
 
   return (
     <div>
@@ -21,26 +21,44 @@ export default function Home() {
         />
       </div>
       <div className="btn-group-horizontal text-right mr-3">
-        <Link to={`/`} className="btn btn-secondary m-1">
+        <button
+          className="btn btn-secondary m-1"
+          onClick={() => setPageNumber(1)}
+        >
           01
-        </Link>
-        <Link to={`/page/2`} className="btn btn-secondary m-1">
+        </button>
+        <button
+          className="btn btn-secondary m-1"
+          onClick={() => setPageNumber(2)}
+        >
           02
-        </Link>
-        <Link to={`/page/3`} className="btn btn-secondary m-1">
+        </button>
+        <button
+          className="btn btn-secondary m-1"
+          onClick={() => setPageNumber(3)}
+        >
           03
-        </Link>
-        <Link to={`/page/4`} className="btn btn-secondary m-1">
+        </button>
+        <button
+          className="btn btn-secondary m-1"
+          onClick={() => setPageNumber(4)}
+        >
           04
-        </Link>
-        <Link to={`/page/5`} className="btn btn-secondary m-1">
+        </button>
+        <button
+          className="btn btn-secondary m-1"
+          onClick={() => setPageNumber(5)}
+        >
           05
-        </Link>
-        <Link to={`/page/6`} className="btn btn-secondary m-1">
+        </button>
+        <button
+          className="btn btn-secondary m-1"
+          onClick={() => setPageNumber(6)}
+        >
           06
-        </Link>
+        </button>
       </div>
-      <Page movie={movie} />
+      <Page movie={movie} pageNumber={pageNumber} />
     </div>
   );
 }

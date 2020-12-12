@@ -2,12 +2,15 @@ import React from "react";
 
 export default function ImageGallery(props) {
   return (
-    <div>
-      <div>
-        {props.images.map((image, index) => (
+    <div className="row">
+      {/* used bootstrap to responsive web design */}
+
+      {props.images.map((image, index) => (
+        <div className="card-body ml-3">
           <img src={image.url} alt="picture" key={index} />
-        ))}
-      </div>
+          {/* if there is no image alt will show in the place where the image would be */}
+        </div>
+      ))}
     </div>
   );
 }

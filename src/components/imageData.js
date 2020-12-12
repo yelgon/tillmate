@@ -44,16 +44,21 @@ export default function ImageData() {
 
   return (
     <div>
-      <div style={{ position: "fixed", top: "0" }}>
+      <div style={{ position: "fixed", top: "0", left: "10px" }}>
         <Link to="/">
           <h2>BACK</h2>
         </Link>
       </div>
-      <div style={{ marginTop: "100px" }}>
+      <div style={{ marginTop: "60px" }}>
         <ImageGallery images={numberOfImages} />
       </div>
       <div>
-        <Button variant="contained" color="primary" onClick={handleShowMore}>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{ marginLeft: "10px" }}
+          onClick={handleShowMore}
+        >
           {/* when user click this button handleShowMore function will be excuted */}
           Show more
         </Button>
